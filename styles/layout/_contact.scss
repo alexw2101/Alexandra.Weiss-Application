@@ -1,0 +1,79 @@
+@use "../abstracts" as *;
+
+.contact
+{
+  background-color: $color-secondary;
+  font-size: 1rem;
+  position: relative;
+  top: 0rem;
+  width: 100vw;
+
+  &-flexbox
+  {
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+}
+
+  
+.container__contact
+{
+
+  @include make-container();
+
+  &-text
+  {
+    color: $color-quaternary;
+  }
+
+  &-information
+  {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  &-buttons
+  {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+
+  &-buttons-number,
+  &-buttons-mail
+  {
+    background-color: $color-tertiary;
+    color: $color-quaternary;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 1.5rem;
+    border-style: none;
+  }
+
+  &-buttons-number:hover,
+  &-buttons-mail:hover
+  {
+    cursor: pointer;
+    box-shadow: 0 0 0.7rem $color-tertiary;
+    //background-color: $color-quaternary;
+    //color: $color-tertiary;
+  }
+
+  &-buttons-mail
+  {
+    margin-right: 1rem; 
+  }
+}
+
+
+.container__contact-line
+{
+  width: 70%;
+  margin-left: 15%;
+  border-color: $color-tertiary;
+}
+
+.container__contact-name
+{
+  padding-right: 2rem;
+}

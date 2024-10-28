@@ -1,0 +1,40 @@
+@use "variables" as *;
+
+@mixin clearfix()
+{
+  &::after{
+    display: block;
+    clear: both;
+    content: "";
+  }
+}
+
+@mixin make-container()
+{
+    @include clearfix; 
+  
+    max-width: 75rem;
+    margin: 0px auto;
+    padding: 0 2rem;  
+  
+  
+  
+    @media (max-width: $breakpoint-xs) {
+        padding: 0 1rem;
+    }
+}
+
+
+@mixin motivation__picture-position($top, $left)
+{
+  top: $top;
+  left: $left;
+
+  $border-plus-padding: $-motivation__picture-hover-border + $-motivation__picture-hover-padding;
+
+  &:hover
+  {
+    top: $top - $border-plus-padding;
+    left: calc(#{$left} - #{$border-plus-padding});
+  }
+}

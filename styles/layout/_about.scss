@@ -1,0 +1,246 @@
+
+@use "../abstracts" as *;
+
+.about
+{
+  padding-top: 15rem;
+  padding-bottom: 3rem;
+}
+
+.about__slideshow
+{
+  position: relative;
+}
+
+.about__img
+{
+  float: left;
+
+  $-img-size: 32rem;
+
+  height: $-img-size;
+  width: $-img-size;
+  border-radius: $-img-size/2;
+  shape-outside: circle(50% at 50% 50%);
+  object-fit: cover;
+  margin-right: 5rem;
+  margin-left: 4rem;
+  
+
+  @media (max-width: $breakpoint-lg) {
+    height: $-img-size * 0.9;
+    width: $-img-size * 0.9;
+  }
+  @media (max-width: $breakpoint-md) {
+    height: $-img-size * 0.8;
+    width: $-img-size * 0.8;
+  }
+  @media (max-width: $breakpoint-sm) {
+    height: $-img-size *0.5;
+    width: $-img-size * 0.5;
+  }
+  @media (max-width: $breakpoint-xs) {
+    height: $-img-size *0.35;
+    width: $-img-size * 0.35;
+    float: none;
+    margin-left: calc(50vw - (11.2rem/1.5));
+  }
+}
+
+.about__img-slideshow
+{
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.about__img-slideshow-5
+{
+animation-name: animation-about__img-slideshow-5;
+animation-timing-function: ease-in-out;
+animation-duration: 10s;
+animation-iteration-count: infinite;
+}
+
+@keyframes animation-about__img-slideshow-5
+{
+    0%
+    {
+      opacity: 1;
+    }
+
+    17.5%
+    {
+      opacity: 1;
+    }
+
+    20.5%
+    {
+      opacity: 0;
+    }
+
+    95%
+    {
+      opacity: 0;
+    }
+}
+
+
+.about__img-slideshow-4
+{
+animation-name: animation-about__img-slideshow-4;
+animation-timing-function: ease-in-out;
+animation-duration: 10s;
+animation-iteration-count: infinite;
+}
+
+@keyframes animation-about__img-slideshow-4
+{
+    0%
+    {
+      opacity: 1;
+    }
+
+    35.5%
+    {
+      opacity: 1;
+    }
+
+    38.5%
+    {
+      opacity: 0;
+    }
+
+    100%
+    {
+      opacity: 0;
+    }
+}
+
+
+.about__img-slideshow-3
+{
+animation-name: animation-about__img-slideshow-3;
+animation-timing-function: ease-in-out;
+animation-duration: 10s;
+animation-iteration-count: infinite;
+}
+
+@keyframes animation-about__img-slideshow-3
+{
+    0%
+    {
+      opacity: 1;
+    }
+
+    56%
+    {
+      opacity: 1;
+    }
+
+    59%
+    {
+      opacity: 0;
+    }
+
+    100%
+    {
+      opacity: 0;
+    }
+}
+
+
+.about__img-slideshow-2
+{
+animation-name: animation-about__img-slideshow-2;
+animation-timing-function: ease-in-out;
+animation-duration: 10s;
+animation-iteration-count: infinite;
+}
+
+@keyframes animation-about__img-slideshow-2
+{
+    0%
+    {
+      opacity: 1;
+    }
+
+    74%
+    {
+      opacity: 1;
+    }
+
+    77%
+    {
+      opacity: 0;
+    }
+
+    100%
+    {
+      opacity: 0;
+    }
+}
+
+
+.about__heading
+{
+
+  letter-spacing: 0.1rem;
+  font-size: 2.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+
+  &-line
+  {
+    display: inline-block;
+    background-color: $color-secondary;
+    height: 0.25rem;
+    width: 6rem;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: $breakpoint-lg) {
+    padding-top: 0.5;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    font-size: 1.7rem;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    font-size: 1.4rem;
+  }
+
+  @media (max-width: $breakpoint-xs) {
+    font-size: 1.1rem;
+  }
+}
+
+.about__quote
+{
+  font-style: italic;
+  font-weight: 700;
+  padding-bottom: 0.75rem;
+
+  &::before
+  {
+    content: "„";
+  }
+
+  &::after
+  {
+    content: "“";
+  }
+}
+
+.about__quote-author
+{
+  padding-bottom: 1rem;
+  font-weight: 300;
+}
+
+.about__paragraph
+{
+  padding-bottom: 0.75rem;
+  font-weight: 300;
+}

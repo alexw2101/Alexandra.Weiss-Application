@@ -1,0 +1,257 @@
+
+@use "../abstracts" as *;
+
+
+.container
+{
+  margin: 0px auto;
+  padding: 0 2rem; 
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+}
+
+
+
+.container__header::before,
+.container__header::after {
+    content: "";
+    position: absolute;
+    width: 100vw;
+    left: 0;
+    right: 0;
+    top: 0rem;
+
+    
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% auto;
+
+
+    
+}
+
+.container__header::before {
+    bottom: 0rem;
+    background-image: radial-gradient(ellipse at 50% 50%, rgba(0, 0, 0, 0.15) 25%, rgba(0, 0, 0, 0.15) 75%),
+    url("../images/Bewerbungs_foto.jpg");
+
+    background-color: $color-secondary;
+}
+
+.container__header::after {
+    left: 0rem;
+    bottom: 0rem;
+    top: 3.7rem;
+
+    background-image: url("../images/D842695C-1D2B-4F11-B01A-4F97FC92C094\ 2.PNG");
+
+    @media (max-width: $breakpoint-lg) {
+      top: 3.3rem;
+      height: 45rem;
+    }
+
+    @media (max-width: 68em) {
+      top: 3rem;
+      height: 45rem;
+    }
+
+    @media (max-width: $breakpoint-md) {
+      top: 2.75rem;
+      height: 45rem;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+    background-image: none;
+     height: auto;
+    }
+}
+
+.container__header
+{
+  display: relative;
+  height: 45rem;
+
+  @include make-container();
+
+
+
+  @media (max-width: $breakpoint-lg) {
+    height: 45rem;
+  }
+
+  @media (max-width: 68em) {
+    height: 45rem;
+  }
+
+  @media (max-width: 68em) {
+    height: 40rem;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    height: 34rem;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    height: 26rem;
+  }
+
+  @media (max-width: $breakpoint-xs) {
+    height: 15rem;
+  }
+
+}
+
+.container__header-text
+{
+  padding-top: 19rem;
+  padding-right: 6rem;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 0.9rem rgba(0, 0, 0, 0.9);
+  display: block;
+  z-index: -1;
+
+
+  animation-name: container__header-text-animation;
+  animation-delay: 0.75s;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+
+  @keyframes container__header-text-animation {
+    0% {
+      opacity: 0;
+      font-weight: 100;
+  }
+  100% {
+      opacity: 1;
+      font-weight: 600;
+  }
+ }
+
+
+      @media (max-width: $breakpoint-lg) {  
+       padding-right: 7rem;
+      }
+
+      @media (max-width: 68em) {
+        padding-top: 20rem;
+        padding-right: 9rem;
+      }
+
+      @media (max-width: $breakpoint-md) {
+        padding-right: 8rem;
+        padding-top: 12rem;
+      }
+    
+      @media (max-width: $breakpoint-sm) {
+        padding-right: 7.5rem;
+        padding-top: 10rem;
+      }
+
+      @media (max-width: $breakpoint-xs) {
+       padding-top: 4rem;
+      }
+
+}
+
+.container__header-name
+{
+  font-size: 4rem;
+
+  margin-bottom: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  animation-name: container__header-text-animation;
+  animation-delay: 0.65s;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+
+
+  @media (min-width: 95em) {
+    font-size: 6rem;
+    margin-top: 2rem;
+    margin-right: 3rem;
+  }
+
+  @media (max-width: 75em) {
+    font-size: 3.4rem;
+    margin-top: -3rem;
+  }
+
+  @media (max-width: 62em) {
+    font-size: 3.2rem;
+    margin-bottom: 0rem;
+    margin-top: 0;
+    margin-left: -1.5rem;
+  }
+
+  @media (max-width: 48em) {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    font-size: 2.5rem;
+    margin-left: -1rem;
+  }
+
+  @media (max-width: $breakpoint-xs) {
+    margin-left: -6px;
+    font-size: 2rem;
+  }
+}
+
+.container__header-line
+{
+  border-color: white;
+  width: 75%;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  margin-left: 10.5%;
+
+
+}
+
+.container__header-sub
+{
+  font-size: 2rem;
+
+  @media (min-width: 95em) {
+    font-size: 2.3rem;
+    margin-right: 3rem;
+  }
+
+  @media (max-width: 75em) {
+    font-size: 1.4rem;;
+  }
+
+  @media (max-width: 62em) {
+    font-size: 1.2rem;
+    margin-left: -1.5rem;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    font-size: 1rem;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    font-size: 1rem;
+  }
+
+  @media (max-width: $breakpoint-xs) {
+    font-size: 0.9rem;
+    margin-left: -0.7rem;
+  }
+  
+}
+

@@ -1,0 +1,193 @@
+
+@use "../abstracts" as *;
+
+$-icon-size: 3.5rem;
+$-animation-duration: 0.25s;
+
+h2
+{
+  font-size: 2.5rem;
+  padding-bottom: 2rem;
+
+}
+
+
+.information
+{
+  padding: 0 2rem;
+
+  @include make-container(); 
+}
+
+.container__information
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  position: relative;
+}
+
+
+.container__information::before,
+.container__information::after
+{
+  z-index: -1;
+  top: 0rem;
+  left: 0;
+  right: 0;
+  position: absolute;
+  content: "Information";
+  text-transform: uppercase;
+  color: white;
+  font-size: min(calc(100vw / 8), 10rem);
+  text-align: center;
+  text-shadow: 0 0 0.1rem rgb(130, 129, 60);
+  overflow: hidden;
+
+}
+
+.container__information::before
+{
+  -webkit-text-stroke: 1px rgb(130, 129, 60);
+  text-stroke: 1px rgb(130, 129, 60);
+  text-shadow: none;
+}
+
+.container__information-card
+{
+  flex: 0 0 17.18rem;
+  position: relative;
+  overflow: hidden;
+
+
+  width: 22%;
+  height: 20rem;
+  top: 10rem;
+
+  box-shadow: 0 0 0.25 black;
+  z-index: 0;
+
+  transform: scale(1);
+  transition: transform $-animation-duration ease-in-out, 
+    box-shadow $-animation-duration ease-in-out,
+    z-index $-animation-duration linear;
+
+  &:hover
+  {
+    transform: scale(1.1);
+    box-shadow: 0 0 0.25rem black;
+
+    transition: transform $-animation-duration ease-in-out, 
+      box-shadow $-animation-duration ease-in-out,
+      z-index 0s linear;
+
+    z-index: 10000;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    top: 6rem;
+  }
+
+}
+
+.container__information-card-img
+{
+  width: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.container__information-icon-background
+{
+  background-color: $color-secondary;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: $-icon-size;
+
+  width: 100%;
+
+  transform: translate(calc(-100% + #{$-icon-size}), 0);
+
+  transition: transform $-animation-duration ease-in-out;
+
+  .container__information-card:hover &
+  {
+   transform: translate(0, 0);
+   box-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.5);
+  }
+}
+
+.container__information-icon-container
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  transform: translate(0, 0);
+  transition: transform $-animation-duration ease-in-out;
+
+  .container__information-card:hover &
+  {
+    transform: translate(calc(50% - #{$-icon-size / 2}), 0);
+  }
+}
+
+
+.container__information-icon
+{
+  filter: invert(1);
+  position: absolute;
+  display: block;
+  width: $-icon-size;
+  top: 0;
+  left: 0;
+
+}
+
+.container__information-card-text
+{
+  position: absolute;
+  top: 6.5rem;
+  left: 0;
+  right: 0;
+  color: white;
+  text-shadow: 0 0 0.7rem black;
+  font-size: 1.3rem;
+  padding: 0.8rem 0.8rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+
+  background-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.3) 20%);
+
+  transform: translate(0, calc(100% - 5.2rem));
+  transition: transform $-animation-duration ease-in-out;
+
+  .container__information-card:hover &
+  {
+    transform: translate(0, 0);
+  }
+
+}
+
+.container__information-card-line
+{
+  position: absolute;
+  color: $color-secondary;
+  height: 1.5rem;
+  top: 3.2rem;
+  left: 0rem;
+  padding: 0.8rem 0.8rem;
+
+}
+
+.container__information-card-list
+{
+  list-style-type: none;
+  font-size: 0.9rem;
+}
+

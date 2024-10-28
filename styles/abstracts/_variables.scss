@@ -1,0 +1,21 @@
+$color-primary: white!default;
+$color-secondary: rgb(196, 194, 91);
+$color-tertiary: rgb(164, 163, 81);
+$color-quaternary: rgb(96, 95, 46);
+
+/** 1200px oder schmaler */
+$breakpoint-lg: 75em!default;
+
+/** 992px oder schmaler */
+$breakpoint-md: 62em!default;
+
+/** 768px oder schmaler */
+$breakpoint-sm: 48em!default;
+
+/** 576px oder schmaler */
+$breakpoint-xs: 36em!default;
+
+@media (max-width: $breakpoint-lg) {}
+@media (max-width: $breakpoint-md) {}
+@media (max-width: $breakpoint-sm) {}
+@media (max-width: $breakpoint-xs) {}
